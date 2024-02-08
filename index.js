@@ -1,5 +1,5 @@
 const readline = require('readline');
-
+const fs = require ('fs')
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -19,11 +19,16 @@ const rl = readline.createInterface({
             on a
             ${shapeColor} ${shape}`);
 
+let shapeSvg
+if (shape == 'circle') {shapeSvg = `<circle cx="150" cy="150" r="50" fill="${shapeColor}" />`}
+if (shape == 'square') {shapeSvg = `<rect width="200" height="100" x="100" y="50" rx="20" ry="20" fill="${shapeColor}" />`}
+if (shape == 'triangle') {shapeSvg = `<polygon points="200,10 250,190 150,190" fill="${shapeColor}" />`}
+
 // Generate an SVG image
-        const svg = `<svg width="300" height="200">
+        const svg = `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         <text x="150" y="100" fill="${textColor}" text-anchor="middle">${text}</text>
-        <${shape} fill="${shapeColor}" cx="150" cy="150" r="50" width="100" height="100"></${shape}>
-      </svg>`;
+        ${shapeSvg}
+       </svg>`;
 
 // Save SVG image
         fs.writeFile('logo.svg', svg, (err) => {
