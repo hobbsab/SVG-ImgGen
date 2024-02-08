@@ -1,0 +1,12 @@
+{
+    "name": "SVG-ImgGen",
+    "version": "1.0",
+    "main": "index.js",
+    "license": "--",
+    "dependencies": {
+        "inquirer": "^8.2.4"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0"
+    }
+}
