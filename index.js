@@ -22,7 +22,7 @@ const rl = readline.createInterface({
 let shapeSvg
 if (shape == 'circle') {shapeSvg = `<circle cx="150" cy="150" r="50" fill="${shapeColor}" />`}
 if (shape == 'square') {shapeSvg = `<rect width="200" height="100" x="100" y="50" rx="20" ry="20" fill="${shapeColor}" />`}
-if (shape == 'triangle') {shapeSvg = `<polygon points="200,10 250,190 150,190" fill="${shapeColor}" />`}
+if (shape == 'triangle') {shapeSvg = `<polygon points="50, 13.397 100, 100 0, 100" fill="${shapeColor}" />`}
 
 // Generate an SVG image
         const svg = `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
